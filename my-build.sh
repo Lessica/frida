@@ -5,7 +5,7 @@ export MACOS_CERTID="-"
 export IOS_CERTID="-"
 # sudo killall taskgated
 
-make clean
+# make clean
 make core-ios-arm64
 make core-ios-arm64e
 
@@ -38,6 +38,7 @@ cd frida-swift
 xcodebuild
 cd -
 
+cp -rp frida-swift/build/Release-iphoneos/Frida.framework build/frida-ios-universal/
 frida-core/tools/package-server-ios.sh build/frida-ios-universal "build/re.frida.server_${FRIDA_VERSION}_iphoneos-arm.deb"
 
 exit 0
