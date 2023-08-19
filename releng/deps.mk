@@ -3,6 +3,7 @@ frida_bootstrap_version = 20221210
 
 
 frida_base_url = https://github.com/frida
+glib_fixed_base_url = https://github.com/Lessica
 
 
 include releng/system.mk
@@ -123,8 +124,8 @@ selinux_deps_for_build = \
 	$(NULL)
 
 glib_name = GLib
-glib_version = f3af6c29d39eb7590425d1b22bae29ff6a0ebb6f
-glib_url = $(frida_base_url)/glib.git
+glib_version = d5c0002f46e342103ac162588e4c3974b0a4893e
+glib_url = $(glib_fixed_base_url)/glib.git
 glib_recipe = meson
 glib_patches = \
 	$(NULL)
