@@ -17,13 +17,19 @@ FRIDA_AGENT_EMULATED ?= yes
 FRIDA_JAILBREAK ?= auto
 
 FRIDA_ASAN ?= no
+FRIDA_DEBUG ?= no
 
 ifeq ($(FRIDA_ASAN), yes)
 FRIDA_FLAGS_COMMON := -Doptimization=1 -Db_sanitize=address
 FRIDA_FLAGS_BOTTLE := -Doptimization=1 -Db_sanitize=address
 else
+ifeq ($(FRIDA_DEBUG), yes)
+FRIDA_FLAGS_COMMON := -Doptimization=0
+FRIDA_FLAGS_BOTTLE := -Doptimization=0
+else
 FRIDA_FLAGS_COMMON := -Doptimization=s -Db_ndebug=true --strip
 FRIDA_FLAGS_BOTTLE := -Doptimization=s -Db_ndebug=true --strip
+endif
 endif
 
 FRIDA_MAPPER := -Dmapper=auto
