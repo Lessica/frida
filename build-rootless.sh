@@ -5,7 +5,7 @@ export MACOS_CERTID="-"
 export IOS_CERTID="-"
 # sudo killall taskgated
 
-make clean
+# make clean
 make core-ios-arm64
 make core-ios-arm64e
 

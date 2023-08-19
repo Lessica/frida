@@ -29,6 +29,8 @@ def detect() -> FridaVersion:
     tokens = description.strip().replace("-", ".").split(".")
     if len(tokens) > 1:
         (major, minor, micro, nano, commit) = tokens
+        if major.startswith("v"):
+            major = major[1:]
         major = int(major)
         minor = int(minor)
         micro = int(micro)
