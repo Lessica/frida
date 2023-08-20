@@ -41,6 +41,11 @@ rm -r frida-swift/CFrida_arm64 frida-swift/CFrida_arm64e
 
 nm --just-symbol-name -Ug ./frida-swift/CFrida/libfrida-core.a | grep -v "/" | grep -v -e '^$' > frida-swift/CFrida/CFrida.symbols
 
+cd frida-swift
+xcodebuild clean
+xcodebuild
+cd -
+
 mkdir -p build/frida-ios-universal$JB_PREFIX/Library/Frameworks
 cp -rp frida-swift/build/Release-iphoneos/Frida.framework build/frida-ios-universal$JB_PREFIX/Library/Frameworks/Frida.framework
 
