@@ -60,6 +60,7 @@ chmod 755 $TMPDIR$JB_PREFIX/usr/lib/frida/frida-agent.dylib
 
 mkdir -p $TMPDIR$JB_PREFIX/Library/Frameworks
 cp -r build/frida-ios-universal$JB_PREFIX/Library/Frameworks/Frida.framework $TMPDIR$JB_PREFIX/Library/Frameworks/Frida.framework
+ldid -S $TMPDIR$JB_PREFIX/Library/Frameworks/Frida.framework/Frida
 
 mkdir -p $TMPDIR$JB_PREFIX/Library/LaunchDaemons
 cat > $TMPDIR$JB_PREFIX/Library/LaunchDaemons/re.frida.server.plist <<EOF
